@@ -29,14 +29,14 @@ public class MainController {
 
     @FXML
     void doReset(ActionEvent event) {
-
+        txtResult.setText("");
     }
 
     @FXML
     void doTranslate(ActionEvent event) {
         String s = lblTesto.getText();
         lblTesto.setText("");
-        if(s.matches("[a-zA-Z ]+")){
+        if(s.matches("[a-zA-Z ?]+")){
             String[] strings = s.toLowerCase().split(" ");
             if (strings.length == 1){
                 String translate = dictionary.getTranslate(strings[0]);
@@ -56,7 +56,6 @@ public class MainController {
         assert btnTranslate != null : "fx:id=\"btnTranslate\" was not injected: check your FXML file 'Scene.fxml'.";
         assert lblTesto != null : "fx:id=\"lblTesto\" was not injected: check your FXML file 'Scene.fxml'.";
         assert txtResult != null : "fx:id=\"txtResult\" was not injected: check your FXML file 'Scene.fxml'.";
-
     }
 
 }
